@@ -6,6 +6,19 @@ use Closure;
 
 class Ajax
 {
+    /*
+    *  Error message to respond with
+    *  @var string 
+    */
+    protected $message="Invalid request";
+    
+    /*
+    *  Error code to respond with
+    *  @var int 
+    */
+    
+    protected $code=403;
+    
     /**
      * Handle an incoming request.
      *
@@ -15,8 +28,10 @@ class Ajax
      */
     public function handle($request, Closure $next)
     {
+        //check whether the request is via ajax
         if(!$request->ajax())
-            return response("Invalid request",405);
+            return response($this->message,$this->code);
+        
         return $next($request);
     }
 }
