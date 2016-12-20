@@ -4,10 +4,10 @@ A middleware for laravel which allows only ajax requests
 **1.** In a new/fresh install of laravel
 
 ```
-$ php artisan make:middleware Ajax
+$ php artisan make:middleware ViaAjax
 ```
 
-**2.** Go to `Middleware/Ajax.php` and add your `ajax.php` or:
+**2.** Go to `Middleware/ViaAjax.php` and add your `ajax.php` or:
 
 ```
 <?php
@@ -16,7 +16,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AllowOnlyAjax
+class ViaAjax
 {
     /**
      * Handle an incoming request.
